@@ -1,0 +1,39 @@
+#borderPane_root {
+    -fx-background-color: linear-gradient(#667eea, #764ba2);
+}
+
+
+#hBox_main {
+    -fx-font-family: sans-serif;
+    -fx-font-size: 16px;
+    -fx-alignment: center;
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+#label_titleGame {
+    -fx-font-weight: bold;
+    -fx-font-size: 32px;
+}
+
+#label_gameMode {
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+}
+
+#hBox_gameMode {
+    -fx-alignment: inherit;
+    -fx-spacing: inherit;
+}
+
+#button_play {
+    -fx-background-color: #02409d;
+    -fx-border-width: 0;
+    -fx-border-radius: 15px;
+    -fx-font-size: 16px;
+}
+
+#hBox_bottom {
+    -fx-alignment: center;
+    -fx-padding: 15px;
+}
