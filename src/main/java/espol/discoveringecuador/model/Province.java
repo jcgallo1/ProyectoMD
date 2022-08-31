@@ -1,5 +1,6 @@
 package espol.discoveringecuador.model;
 
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -22,6 +23,14 @@ public class Province {
 
     public Set<Food> getFood() {
         return food;
+    }
+
+    public ArrayList<Food> getFoodList() {
+        ArrayList<Food> tmp = new ArrayList<>();
+        for (Food f : food) {
+            tmp.add(f);
+        }
+        return tmp;
     }
 
     public void setFood(Set<Food> food) {

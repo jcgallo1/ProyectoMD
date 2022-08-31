@@ -1,75 +1,50 @@
+const country = {
+    "Regiones": {
+        "INSULAR": {
+            "Provincias": {
+                "Galapagos": [
+                    "Arroz marinero",
+                    "Bacalao con papas",
+                    "Ceviche de canchalagua",
+                    "Mariscos",
+                    "Pan de yuca",
+                    "Sopa marinera"
+                ]
+            }
+        },
+        "Oriente": {
+            "Provincias": {
+                "Morona-Santiago": ["Ayampaco"],
+                "Napo": ["Masato"],
+                "Orellana": ["Maito de carachama"],
+                "Pastaza": ["Ceviche volquetero"],
+                "Sucumbios": ["Maito"],
+                "Zamora-Chinchipe": ["Ancas de rana"]
+            }
+        },
+        "Sierra": {
+            "Provincias": {
+                "Azuay": ["Mote pillo"],
+                "Bolívar": ["Tortillas de tiesto"],
+                "Cañar": ["Cascaritas"],
+                "Carchi": ["Cuy con papas"],
+                "Chimborazo": ["Ceviche de chocho"],
+                "Cotopaxi": ["Chugchucara"],
+                "Imbabura": ["Fritada"]
+            }
+        },
+        "Costa": {
+            "Provincias": {
+                "El Oro": ["Tigrillo"],
+                "Esmeraldas": ["Encocado de camarón"],
+                "Guayas": ["Cangrejo criollo"],
+                "Los Ríos": ["Bollo de pescado"],
+                "Manabí": ["Tonga"],
+                "Santa Elena": ["Cazuela de mariscos"],
+                "Santo Domingo de los Tsáchilas": ["Pandado"]
+            }
+        }
+    }
+}
 
-/**
- * const data = {
- *     "COSTA": [
- *         "Encebollado",
- *         "Ceviches",
- *         "Corviche",
- *         "Bolón de verde",
- *         "Caldo de salchicha",
- *         "Encocado"
- *     ],
- *     "SIERRA": [
- *         "Locro de Papas",
- *         "Fritada",
- *         "Humitas",
- *         "Llapingachos",
- *         "Fanesca",
- *         "Mote Pillo"
- *     ],
- *     "ORIENTE": [
- *         "Ayampaco",
- *         "Maito de pescado",
- *         "Uchumanka",
- *         "Casabe de Yuca",
- *         "Caldo de Corroncho",
- *         "Mono con Yuca"
- *     ],
- *     "INSULAR": [
- *         "Arroz marinero",
- *         "Bacalao con papas",
- *         "Ceviche de canchalagua",
- *         "Mariscos",
- *         "Pan de yuca",
- *         "Sopa marinera"
- *     ]
- * }
- *
- *
- * const data = {
- *     "COSTA": [
- *         "El Oro",
- *         "Esmeraldas",
- *         "Guayas",
- *         "Los Ríos",
- *         "Manabí",
- *         "Santa Elena",
- * 	"Santo Domingo de los Tsáchilas"
- *     ],
- *     "SIERRA": [
- *         "Azuay",
- *         "Bolívar",
- *         "Cañar",
- *         "Carchi",
- *         "Chimborazo",
- *         "Cotopaxi",
- *          "Imbabura",
- * 	"Loja",
- * 	"Pichincha",
- * 	"Tungurahua"
- *     ],
- *     "ORIENTE": [
- *         "Morona-Santiago",
- *         "Napo",
- *         "Orellana",
- *         "Pastaza",
- *         "Sucumbíos",
- *         "Zamora-Chinchipe"
- *     ],
- *     "INSULAR": [
- *         "Galápagos"
- *     ]
- * }
- *
- *
- * */
+export default { country };

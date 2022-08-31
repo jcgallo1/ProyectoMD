@@ -1,5 +1,6 @@
 package espol.discoveringecuador.model;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public class Region {
@@ -13,6 +14,14 @@ public class Region {
 
     public Set<Province> getProvinces() {
         return provinces;
+    }
+
+    public ArrayList<Province> getProvincesList() {
+        ArrayList<Province> tmp = new ArrayList<>();
+        for (Province province : provinces) {
+            tmp.add(province);
+        }
+        return tmp;
     }
 
     public void setProvinces(Set<Province> provinces) {
@@ -30,8 +39,8 @@ public class Region {
     @Override
     public String toString() {
         return "Region: {" +
+                "Name:\"" + name + "\"," +
                 "Provinces:" + provinces +
-                ", Name:\'" + name + '\'' +
                 '}';
     }
 }

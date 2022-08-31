@@ -53,15 +53,17 @@
       <VBox prefHeight="325.0" prefWidth="461.0" BorderPane.alignment="CENTER">
          <children>
             <Label text="PREGUNTA!" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label fx:id="label_question" layoutX="204.0" layoutY="92.0" text="contenido" />
+                  <Label fx:id="label_food" text="PLATILLO" />
+                  <Label fx:id="label_question" text="QUESTION" />
+                  <Label fx:id="label_x" text="X" />
                </children>
-            </AnchorPane>
+            </VBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="button_true" mnemonicParsing="false" text="Verdadero" />
-                  <Button fx:id="button_false" mnemonicParsing="false" text="Falso" />
+                  <Button fx:id="button_true" mnemonicParsing="false" onAction="#answerTrue" text="Verdadero" />
+                  <Button fx:id="button_false" mnemonicParsing="false" onAction="#answerFalse" text="Falso" />
                </children>
             </HBox>
          </children>
