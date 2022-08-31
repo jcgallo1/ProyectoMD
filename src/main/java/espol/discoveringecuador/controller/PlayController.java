@@ -1,8 +1,10 @@
 package espol.discoveringecuador.controller;
 
+import espol.discoveringecuador.App;
 import espol.discoveringecuador.model.*;
 import espol.discoveringecuador.model.util.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -31,6 +33,7 @@ public class PlayController implements Initializable {
     @FXML private Label label_food;
     @FXML private Label label_x;
     @FXML private ImageView imageView_ruleta;
+    @FXML private ImageView imageView_pingu;
     private Double rotation = 100.0;
     private Country Ecuador;
     private ArrayList<Region> regions = new ArrayList<>();
@@ -57,6 +60,7 @@ public class PlayController implements Initializable {
         label_question.setWrapText(true);
         label_x.setWrapText(true);
 
+        imageView_pingu.setVisible(false);
         imageView_ruleta.setVisible(false);
         textField_tries.setText(String.valueOf(currentTries));
         textField_points.setText(String.valueOf(currentPoints));
@@ -96,27 +100,43 @@ public class PlayController implements Initializable {
     public void generateQuestion() {
         String question = getQuestionBasedOnMode(game.getMode());
         foods.clear();
+        for (Province province : provinces) {
+            foods.addAll(province.getFoodList());
+        }
+
         if (game.getMode() == 'R') {
             imageView_ruleta.setVisible(false);
-            for (Province province : provinces) {
-                foods.addAll(province.getFoodList());
-            }
+            imageView_pingu.setVisible(true);
             label_food.setText(getRandomFood().getName());
             label_question.setText(question);
             label_x.setText(getRandomRegion().getName());
+            System.out.println(">> Current Region: " + currentRegion.getName());
             for (Food food: foods) {
                 System.out.println(food);
             }
         } else {
-
             imageView_ruleta.setVisible(true);
+            imageView_pingu.setVisible(false);
+
+            Integer randomIndexProvince = provinces.indexOf(getRandomProvince());
+            currentProvince = provinces.get(randomIndexProvince);
+            label_food.setText(getRandomFood().getName());
+            label_question.setText(question);
+            label_x.setText(getRandomProvince().getName());
+            System.out.println(">> Current Province: " + currentProvince.getName());
+            for (Food food: foods) {
+                System.out.println(food);
+            }
         }
     }
 
-    private void endGame(String message) {
+
+    @FXML
+    protected void endGame() {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>END GAME");
         Alert a = new Alert(Alert.AlertType.INFORMATION, "Perdio el juego :c");
         a.show();
+        resetGame();
     }
     private void addTries() {
         currentTries++;
@@ -130,7 +150,7 @@ public class PlayController implements Initializable {
 
     private void restPoints() {
         if (currentPoints == 0) {
-            endGame("Perdiste");
+            endGame();
         } else {
             currentPoints--;
             textField_points.setText(String.valueOf(currentPoints));
@@ -151,8 +171,18 @@ public class PlayController implements Initializable {
                 System.out.println("REST POINTS");
             }
         } else {
-
+            String province_answered = label_x.getText();
+            if (currentProvince.getName().equals(province_answered)) {
+                addPoints();
+                System.out.println("ADD POINTS");
+            }
+            else {
+                restPoints();
+                System.out.println("REST POINTS");
+            }
         }
+        checkWin();
+        play();
     }
     @FXML
     protected void answerFalse() {
@@ -168,16 +198,39 @@ public class PlayController implements Initializable {
                 restPoints();
                 System.out.println("REST POINTS");
             }
-            checkWin();
         } else {
-
+            String province_answered = label_x.getText();
+            if (!currentProvince.getName().equals(province_answered)) {
+                addPoints();
+                System.out.println("ADD POINTS");
+            }
+            else {
+                restPoints();
+                System.out.println("REST POINTS");
+            }
         }
+        checkWin();
+        play();
     }
 
     private void checkWin() {
         if (currentTries == 10) {
             Alert a = new Alert(Alert.AlertType.CONFIRMATION, "El juego ha terminado, sus puntos son: " + currentPoints.toString());
             a.show();
+            resetGame();
+        }
+    }
+
+    private void resetGame() {
+        final Integer height = 700;
+        final Integer width = height - 200;
+        try {
+            FXMLLoader fxml = App.loadFXMLLoad("welcomeView");
+            App.switchWindowGame(fxml, height, width);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e);
         }
     }
 

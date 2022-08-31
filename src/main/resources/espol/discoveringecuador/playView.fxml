@@ -14,7 +14,7 @@
    <bottom>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="button_end" mnemonicParsing="false" text="Terminar" />
+            <Button fx:id="button_end" mnemonicParsing="false" onAction="#endGame" text="Terminar" />
          </children>
       </HBox>
    </bottom>
@@ -26,6 +26,11 @@
                   <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/baseRuleta.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageView_pingu" fitHeight="148.0" fitWidth="139.0" layoutX="81.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/pingu.jpg" />
                      </image>
                   </ImageView>
                   <ImageView fx:id="imageView_ruleta" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
