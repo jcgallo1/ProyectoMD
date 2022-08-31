@@ -11,10 +11,22 @@ public class Game {
     public Game(Character mode, Country country) {
         this.mode = mode;
         this.country = country;
+        win = false;
+        points = 0;
+        fails = 0;
+        corrects = 0;
+
 
     }
 
     public Game() {
+        mode = 'x';
+        country = null;
+        win = false;
+        Integer tmp = Integer.MIN_VALUE;
+        points = tmp;
+        fails = tmp;
+        corrects = 0;
     }
 
     public Character getMode() {
@@ -22,6 +34,7 @@ public class Game {
     }
 
     public void setMode(Character mode) {
+        System.out.println("Mode selected to: " + mode);
         this.mode = mode;
     }
 

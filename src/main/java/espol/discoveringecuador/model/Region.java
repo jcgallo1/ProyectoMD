@@ -30,8 +30,8 @@ public class Region {
     @Override
     public String toString() {
         return "Region: {" +
-                "provinces:" + provinces +
-                ", name:\'" + name + '\'' +
+                "Provinces:" + provinces +
+                ", Name:\'" + name + '\'' +
                 '}';
     }
 }

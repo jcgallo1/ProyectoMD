@@ -1,6 +1,7 @@
 module espol.discoveringecuador {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jackson.all;
 
 
     opens espol.discoveringecuador to javafx.fxml;

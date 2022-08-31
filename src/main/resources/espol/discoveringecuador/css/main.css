@@ -1,86 +1,57 @@
-#root {
-    -fx-font-family: SansSerif;
-// -fx-background: linear-gradient( rgba(0, 225, 255, 0.815) , #1c11bbb9) ;
+BorderPane {
+    -fx-font-family: Sans-serif;
+    -fx-background-color: linear-gradient(#667eea, #764ba2);
+}
 
+HBox, VBox {
+    // -fx-background-color: red;
+    -fx-alignment: center;
+    -fx-spacing: 40px;
+}
+
+Button {
+    -fx-background-color: #02409d;
     -fx-text-fill: white;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
 }
 
-.main {
-    -fx-alignment: center;
-    -fx-spacing: 10;
+Button:hover {
+    -fx-background-color: #0e5ac9;
 }
 
-.aside {
-    -fx-alignment: center;
-    -fx-spacing: 10;
+#button_true {
+    -fx-background-color: #34b040;
 }
 
-.btns_selection {
-    -fx-alignment: center;
-    -fx-spacing: 10;
+#button_true:hover {
+    -fx-background-color: #144619;
 }
 
-.lbl_nPregunta {
-    -fx-alignment: center;
-    -fx-spacing: 10;
+#button_false {
+    -fx-background-color: #f44336;
 }
 
-.lbl_nPunto {
-    -fx-alignment: center;
-    -fx-spacing: 10;
+#button_false:hover {
+    -fx-background-color: #611a15;
 }
 
-.footer {
-    -fx-alignment: center;
-}
-
-label {
+Label {
     -fx-font-size: 14;
     -fx-font-weight: bold;
     -fx-alignment: center;
 }
 
-#pregunta {
+#label_question {
     -fx-font-size: 16;
     -fx-font-weight: bold;
     -fx-alignment: center;
     -fx-max-width: 350px;
+    -fx-wrap-text: true;
 }
 
-#puntos {
+#textField_points, #textField_tries{
     -fx-font-size: 14;
     -fx-font-weight: bold;
     -fx-alignment: center;
-}
-
-.btn {
-    -fx-background-color: #02409d;
-    -fx-text-fill: white;
-    -fx-font-size: 14;
-}
-.btn:hover {
-    -fx-background-color: #0e5ac9;
-}
-.footer {
-    -fx-spacing: 40;
-}
-
-.girar {
-    -fx-alignment: center;
-}
-
-#btn_true {
-    -fx-background-color: #34b040;
-}
-
-#btn_true:hover {
-    -fx-background-color: #144619;
-}
-
-#btn_false {
-    -fx-background-color: #f44336;
-}
-
-#btn_false:hover {
-    -fx-background-color: #611a15;
 }

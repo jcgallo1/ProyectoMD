@@ -2,11 +2,9 @@ package espol.discoveringecuador.model;
 
 public class Food {
     public String name;
-    public Province province;
 
-    public Food(String name, Province province) {
+    public Food(String name) {
         this.name = name;
-        this.province = province;
     }
 
     public String getName() {
@@ -17,19 +15,10 @@ public class Food {
         this.name = name;
     }
 
-    public Province getProvince() {
-        return province;
-    }
-
-    public void setProvince(Province province) {
-        this.province = province;
-    }
-
     @Override
     public String toString() {
         return "Food: {" +
                 "name:\'" + name + '\'' +
-                ", province:" + province +
                 '}';
     }
 }
