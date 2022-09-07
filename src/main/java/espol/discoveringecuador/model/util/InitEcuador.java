@@ -2,13 +2,10 @@ package espol.discoveringecuador.model.util;
 
 import espol.discoveringecuador.model.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
-
-import org.codehaus.jackson.map.ObjectMapper;
 
 public class InitEcuador {
 
