@@ -4,8 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class App extends Application {
@@ -20,14 +22,15 @@ public class App extends Application {
     private static boolean resizable = false;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stg) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(welcomeView));
         Scene scene = new Scene(fxmlLoader.load(), width, height);
-        this.stage = stage;
-        this.stage.setTitle(title);
-        this.stage.setScene(scene);
-        this.stage.setResizable(resizable);
-        this.stage.show();
+        stage = stg;
+        stage.getIcons().add(new Image(new FileInputStream("src/public-img/ecuador.png")));
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.setResizable(resizable);
+        stage.show();
     }
 
     public static void switchWindowGame(FXMLLoader fxml, double height, double width) throws IOException {
